@@ -68,7 +68,7 @@ main {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 1rem 1rem;
   letter-spacing: 0.5px;
 }
 
@@ -97,7 +97,6 @@ main {
 
 .overview {
   background-image: linear-gradient(transparent, var(--secondary-color), var(--secondary-color), var(--secondary-color));
-  /* background-color: var(--secondary-color); */
   color: #fff;
   padding: 1rem;
   font-size: 0.8rem;
@@ -115,4 +114,9 @@ main {
   transform: translateY(0%);
 }
 
+@media(max-width: 500px) {
+  .search {
+    width: 60vw;
 
+  }
+}
