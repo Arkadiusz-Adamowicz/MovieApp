@@ -96,7 +96,7 @@ main {
 }
 
 .overview {
-  background-image: linear-gradient(transparent, var(--secondary-color), var(--secondary-color), var(--secondary-color), var(--secondary-color));
+  background-color: var(--secondary-color);
   color: #fff;
   padding: 1rem;
   font-size: 0.8rem;
