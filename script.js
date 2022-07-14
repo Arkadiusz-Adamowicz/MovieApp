@@ -1,4 +1,4 @@
-let API_URL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=249c97960024df9ad2946b5b1b681911&page=10`;
+let API_URL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=249c97960024df9ad2946b5b1b681911&page=1`;
 const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
 const SEARCH_API =
   'https://api.themoviedb.org/3/search/movie?api_key=249c97960024df9ad2946b5b1b681911&query="';
