@@ -1,5 +1,4 @@
-let API_URL =
-  `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=249c97960024df9ad2946b5b1b681911&page=1`;
+let API_URL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=249c97960024df9ad2946b5b1b681911&page=10`;
 const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
 const SEARCH_API =
   'https://api.themoviedb.org/3/search/movie?api_key=249c97960024df9ad2946b5b1b681911&query="';
@@ -8,12 +7,12 @@ const form = document.querySelector("#form");
 const search = document.querySelector("#search");
 const main = document.querySelector("#main");
 
-getMovies(API_URL);
+let results = [];
 
+getMovies(API_URL);
 async function getMovies(url) {
   const res = await fetch(url);
   const data = await res.json();
-
   showMovies(data.results);
 }
 
@@ -21,7 +20,7 @@ function showMovies(movies) {
   main.innerHTML = "";
 
   movies.forEach((movie) => {
-    const { title, poster_path, vote_average, overview } = movie;
+    const { title, poster_path, vote_average, overview, release_date, genre_ids } = movie;
 
     const movieEl = document.createElement("div");
 
@@ -33,8 +32,9 @@ function showMovies(movies) {
         <span class="${getClassByRate(vote_average)}">${vote_average}</span>
       </div>
       <div class="overview">
-        <h3>Overview</h3>
         ${overview}
+        <p>Release date</>
+        ${release_date}
       </div>
       `;
     main.appendChild(movieEl);
@@ -63,11 +63,4 @@ form.addEventListener("submit", (e) => {
     window.location.reload();
   }
 });
-
-
-
-
-
-
-
 
